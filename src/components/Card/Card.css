@@ -1,0 +1,44 @@
+.card {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.card + .card {
+  border-top: 20px solid rgba(230, 236, 245, 0.4);
+}
+
+.card-header {
+  padding-bottom: 1rem;
+}
+
+.label {
+  height: 8px;
+  width: 8px;
+  background-color: var(--rocket-purple);
+}
+
+.card-content {
+  min-height: 7rem;
+  box-shadow: 5px 5px 4px rgba(172, 187, 207, 0.8);
+  background: var(--white);
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.card-content .icon {
+  position: absolute;
+  font-size: 1.9rem;
+  right: 3rem;
+  top: 50%;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.card-content:hover > .icon {
+  opacity: 0.8;
+}
+
+.icon.right {
+  right: 1rem;
+}

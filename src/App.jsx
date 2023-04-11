@@ -21,7 +21,8 @@ function App() {
     });
   }
 
-  function handleAddTask(content, status) {
+  function handleAddTask(e, content, status) {
+    e.preventDefault();
     const newTask = {
       id: generateId(),
       content,

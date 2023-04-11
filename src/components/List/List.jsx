@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import Card from "../Card/Card";
 
 import { MdAdd } from "react-icons/md";
@@ -12,18 +14,24 @@ function List({
   tasks,
   taskStatus,
 }) {
-  function addTask() {
-    handleAddTask("Nova Tarefa", taskStatus);
+  const newTaskContent = useRef();
+
+  function addTask(e) {
+    handleAddTask(e, newTaskContent.current.value, taskStatus);
   }
 
   return (
     <div className="list">
-      <div className="list-header flex">
+      <div className="list-header ">
         <h2 className="list-name">{title}</h2>
+
         {todo && (
-          <button onClick={addTask} className="add-btn" type="submit">
-            <MdAdd size={24} color="#fefefe" />
-          </button>
+          <form className="flex">
+            <input ref={newTaskContent} className="new-task" type="text" />
+            <button onClick={addTask} className="add-btn" type="submit">
+              <MdAdd size={24} color="#fefefe" />
+            </button>
+          </form>
         )}
       </div>
       <ul className="tasks">

@@ -34,6 +34,11 @@ function App() {
     });
   }
 
+  function handleDeleteTask(id) {
+    const updatedTasks = tasks.filter((task) => task.id != id);
+    setTasks(updatedTasks);
+  }
+
   return (
     <div className="App">
       <div className="board">
@@ -43,6 +48,7 @@ function App() {
           taskStatus="todo"
           handleAddTask={handleAddTask}
           handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
           tasks={tasks.filter((task) => task.status === "todo")}
         />
         <List
@@ -50,6 +56,7 @@ function App() {
           taskStatus="inProgress"
           handleAddTask={handleAddTask}
           handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
           tasks={tasks.filter((task) => task.status === "inProgress")}
         />
         <List
@@ -57,6 +64,7 @@ function App() {
           taskStatus="dfunction handone"
           handleAddTask={handleAddTask}
           handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
           tasks={tasks.filter((task) => task.status === "done")}
         />
       </div>

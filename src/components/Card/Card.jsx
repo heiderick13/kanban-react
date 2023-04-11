@@ -3,7 +3,7 @@ import "./Card.css";
 import { BsTrash3 } from "react-icons/bs";
 import { MdOutlineArrowCircleRight } from "react-icons/md";
 
-function Card({ id, content, taskStatus, handleUpdateTask }) {
+function Card({ id, content, taskStatus, handleUpdateTask, handleDeleteTask }) {
   function handleForwardTask() {
     if (taskStatus === "todo") {
       handleUpdateTask(id, content, "inProgress");
@@ -12,6 +12,10 @@ function Card({ id, content, taskStatus, handleUpdateTask }) {
     if (taskStatus === "inProgress") {
       handleUpdateTask(id, content, "done");
     }
+  }
+
+  function deleteTask() {
+    handleDeleteTask(id);
   }
 
   return (
@@ -28,7 +32,7 @@ function Card({ id, content, taskStatus, handleUpdateTask }) {
             onClick={handleForwardTask}
           />
         )}
-        <BsTrash3 className="icon" />
+        <BsTrash3 onClick={deleteTask} className="icon" />
       </div>
     </div>
   );

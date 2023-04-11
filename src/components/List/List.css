@@ -1,5 +1,5 @@
 .list {
-  height: 100%;
+  min-height: 100%;
   width: 350px;
   padding-inline: 1.5rem;
   margin-top: 2rem;
@@ -20,7 +20,7 @@
 
 .list-header {
   width: 100%;
-  min-height: 4rem;
+  min-height: 7rem;
 
   margin-bottom: 2rem;
 

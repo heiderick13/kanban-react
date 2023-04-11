@@ -11,6 +11,7 @@ function List({
   title,
   handleAddTask,
   handleUpdateTask,
+  handleDeleteTask,
   tasks,
   taskStatus,
 }) {
@@ -18,13 +19,13 @@ function List({
 
   function addTask(e) {
     handleAddTask(e, newTaskContent.current.value, taskStatus);
+    newTaskContent.current.value = "";
   }
 
   return (
     <div className="list">
       <div className="list-header ">
         <h2 className="list-name">{title}</h2>
-
         {todo && (
           <form className="flex">
             <input ref={newTaskContent} className="new-task" type="text" />
@@ -43,6 +44,7 @@ function List({
               content={task.content}
               taskStatus={task.status}
               handleUpdateTask={handleUpdateTask}
+              handleDeleteTask={handleDeleteTask}
             />
           );
         })}

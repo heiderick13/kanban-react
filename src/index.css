@@ -3,5 +3,45 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --rocket-purple: hsl(262, 83%, 58%);
+  --blueish-white: hsl(213, 100%, 98%);
   --white: hsl(0, 0%, 100%);
+}
+
+.flex {
+  display: flex;
+}
+
+.board {
+  min-height: 97vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--blueish-white);
+}
+
+.new-task {
+  /* width: 300px; */
+  border: 1px solid var(--rocket-purple);
+  outline: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.add-btn {
+  background-color: var(--rocket-purple);
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.5rem;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+.add-btn:hover {
+  scale: 1.1;
+}
+
+.add-btn:active {
+  scale: 1;
+  transition: 0s;
 }

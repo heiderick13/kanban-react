@@ -1,6 +1,6 @@
 .list {
   height: 100%;
-  min-width: 350px;
+  width: 350px;
   padding-inline: 1.5rem;
   margin-top: 2rem;
 }

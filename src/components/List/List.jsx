@@ -1,26 +1,34 @@
 import Card from "../Card/Card";
+
+import { MdAdd } from "react-icons/md";
+
 import "./List.css";
 
-function List({ name, array, handleDelete, handleForwardTask }) {
+function List({ todo, title, handleAddTask, tasks }) {
+  function addTask() {
+    handleAddTask("Nova Tarefa", "todo");
+  }
+
   return (
     <div className="list">
       <div className="list-header flex">
-        <h2 className="list-name">{name}</h2>
+        <h2 className="list-name">{title}</h2>
+        {todo && (
+          <button onClick={addTask} className="add-btn" type="submit">
+            <MdAdd size={24} color="#fefefe" />
+          </button>
+        )}
       </div>
       <ul className="tasks">
-        {array.length > 0 &&
-          array.map((task) => {
-            return (
-              <Card
-                id={task.id}
-                key={task.id}
-                content={task.name}
-                status={task.status}
-                handleDelete={handleDelete}
-                handleForwardTask={handleForwardTask}
-              />
-            );
-          })}
+        {tasks.map((task) => {
+          return (
+            <Card
+              key={task.id}
+              content={task.content}
+              taskStatus={task.status}
+            />
+          );
+        })}
       </ul>
     </div>
   );

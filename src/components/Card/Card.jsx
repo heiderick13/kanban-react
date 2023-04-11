@@ -11,7 +11,9 @@ function Card({ id, content, taskStatus }) {
       </div>
       <div className="card-content">
         <p>{content}</p>
-        <MdOutlineArrowCircleRight className="icon right" />
+        {taskStatus != "done" && (
+          <MdOutlineArrowCircleRight className="icon right" />
+        )}
         <BsTrash3 className="icon" />
       </div>
     </div>

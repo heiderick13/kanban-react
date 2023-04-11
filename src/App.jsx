@@ -27,16 +27,19 @@ function App() {
         <List
           todo={true}
           title="Todo"
+          taskStatus="todo"
           handleAddTask={handleAddTask}
           tasks={tasks.filter((task) => task.status === "todo")}
         />
         <List
           title="In Progress"
+          taskStatus="inProgress"
           handleAddTask={handleAddTask}
           tasks={tasks.filter((task) => task.status === "inProgress")}
         />
         <List
           title="Done"
+          taskStatus="done"
           handleAddTask={handleAddTask}
           tasks={tasks.filter((task) => task.status === "done")}
         />

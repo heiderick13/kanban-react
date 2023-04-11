@@ -4,9 +4,9 @@ import { MdAdd } from "react-icons/md";
 
 import "./List.css";
 
-function List({ todo, title, handleAddTask, tasks }) {
+function List({ todo, title, handleAddTask, tasks, taskStatus }) {
   function addTask() {
-    handleAddTask("Nova Tarefa", "todo");
+    handleAddTask("Nova Tarefa", taskStatus);
   }
 
   return (

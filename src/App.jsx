@@ -9,6 +9,18 @@ function generateId() {
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  function handleUpdateTask(id, content, status) {
+    setTasks((prev) => {
+      return prev.map((task) => {
+        if (task.id === id) {
+          return { ...task, content, status };
+        } else {
+          return task;
+        }
+      });
+    });
+  }
+
   function handleAddTask(content, status) {
     const newTask = {
       id: generateId(),
@@ -29,18 +41,21 @@ function App() {
           title="Todo"
           taskStatus="todo"
           handleAddTask={handleAddTask}
+          handleUpdateTask={handleUpdateTask}
           tasks={tasks.filter((task) => task.status === "todo")}
         />
         <List
           title="In Progress"
           taskStatus="inProgress"
           handleAddTask={handleAddTask}
+          handleUpdateTask={handleUpdateTask}
           tasks={tasks.filter((task) => task.status === "inProgress")}
         />
         <List
           title="Done"
-          taskStatus="done"
+          taskStatus="dfunction handone"
           handleAddTask={handleAddTask}
+          handleUpdateTask={handleUpdateTask}
           tasks={tasks.filter((task) => task.status === "done")}
         />
       </div>

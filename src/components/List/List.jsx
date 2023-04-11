@@ -4,7 +4,14 @@ import { MdAdd } from "react-icons/md";
 
 import "./List.css";
 
-function List({ todo, title, handleAddTask, tasks, taskStatus }) {
+function List({
+  todo,
+  title,
+  handleAddTask,
+  handleUpdateTask,
+  tasks,
+  taskStatus,
+}) {
   function addTask() {
     handleAddTask("Nova Tarefa", taskStatus);
   }
@@ -23,9 +30,11 @@ function List({ todo, title, handleAddTask, tasks, taskStatus }) {
         {tasks.map((task) => {
           return (
             <Card
+              id={task.id}
               key={task.id}
               content={task.content}
               taskStatus={task.status}
+              handleUpdateTask={handleUpdateTask}
             />
           );
         })}

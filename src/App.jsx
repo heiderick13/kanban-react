@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import List from "./components/List/List";
 import Header from "./components/Header/Header";
@@ -42,6 +42,15 @@ function App() {
     const updatedTasks = tasks.filter((task) => task.id != id);
     setTasks(updatedTasks);
   }
+
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("localTasks"));
+    if (savedTasks) setTasks(savedTasks);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("localTasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="App">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import List from "./components/List/List";
+import Header from "./components/Header/Header";
 
 function generateId() {
   return Date.now();
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <div className="board">
         <List
           todo={true}

@@ -20,7 +20,7 @@
 }
 
 .board {
-  min-height: 100vh;
+  height: calc(100vh - 90px);
   display: flex;
   flex-wrap: wrap;
   background-color: var(--blueish-white);

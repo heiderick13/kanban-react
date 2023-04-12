@@ -1,5 +1,5 @@
 .list {
-  min-height: 100%;
+  /* min-height: 100%; */
   width: 350px;
   padding-inline: 1.5rem;
   margin-top: 2rem;
@@ -7,15 +7,6 @@
 
 .list + .list {
   border-left: 1px solid var(--rocket-purple);
-}
-
-.tasks {
-  height: 85%;
-  overflow-y: auto;
-}
-
-.tasks::-webkit-scrollbar {
-  display: none;
 }
 
 .list-header {
@@ -26,4 +17,20 @@
 
   justify-content: space-around;
   align-items: center;
+}
+
+.list-name {
+  font-size: 1.8rem;
+}
+
+.tasks {
+  height: 67%;
+  padding-bottom: 2rem;
+
+  scrollbar-width: none;
+  overflow-y: auto;
+}
+
+.tasks::-webkit-scrollbar {
+  display: none;
 }

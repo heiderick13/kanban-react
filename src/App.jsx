@@ -23,6 +23,9 @@ function App() {
 
   function handleAddTask(e, content, status) {
     e.preventDefault();
+
+    if (content === "") return;
+
     const newTask = {
       id: generateId(),
       content,
